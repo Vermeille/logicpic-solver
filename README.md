@@ -2,6 +2,8 @@
 
 A solver for the game [LogicPic](https://play.google.com/store/apps/details?id=br.com.tapps.logicpic)
 
+<img src="https://github.com/Vermeille/logicpic-solver/blob/master/logicpic.jpg?raw=true" width="512">
+
 The game is a grid initialized with blanks, some of the cell must be checked.
 Each column and row contains constraints of which cell must be in it. For
 instance, "3 4 1" means that there must be 3 consecutive checked cells, at
@@ -23,3 +25,33 @@ The algorithm works as follow:
        blank where we don't know for sure.
     6. Push in the worklist all the modified rows / columns.
 3. Enjoy your solution!
+
+# Usage
+
+1. Write a constraints file. Look at the example! Each row / columns constraints
+   are slash-separated, and all constraints within a row / column are space separated.
+2. `python3 solve.py pic_36.ini`
+3. Enjoy:
+   
+```
++----------------+
+|##..............|
+|.##..#....#.....|
+|..##.##..##.....|
+|..##########....|
+|...######.###..#|
+|...#####...###.#|
+|....##......####|
+|....##.###....##|
+|...##..##......#|
+|...#...........#|
+|...#.......#...#|
+|..##......##...#|
+|..#.....####...#|
+|.##....####...##|
+|.###.#.###....##|
+|..########....##|
+|.....##.###.####|
+|.........#######|
++----------------+
+```
